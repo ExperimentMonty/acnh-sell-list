@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState } from 'react';
 import ItemRow from './ItemRow'
 import './App.css';
 
@@ -7,6 +8,8 @@ class App extends React.Component {
         super(props);
         const currentDate = new Date();
         const currentMonth = currentDate.toLocaleString('en', {month: 'short'}).toLowerCase();
+
+        // Load bugs
         let bugs = require('./bugs.json');
         console.log(bugs);
         const bugsList = Object.entries(bugs).map((rawItem) => rawItem[1]) // Gets the details as the top level object
@@ -15,8 +18,17 @@ class App extends React.Component {
                 return itemDetails.seasonsNorthernHemisphere[currentMonth];
             });
 
+        // Load fish
+        let fish = require('./fish.json');
+        const fishList = Object.entries(fish).map((rawItem) => rawItem[1]) // Gets the details as the top level object
+            .filter((itemDetails) => {
+                //console.log(itemDetails.seasonsNorthernHemisphere)
+                return itemDetails.seasonsNorthernHemisphere[currentMonth];
+            });
+
         this.state = {
             bugsList: bugsList,
+            fishList: fishList,
         };
     }
 
@@ -30,7 +42,8 @@ class App extends React.Component {
     }
 
     render() {
-        const bugItems = this.renderItems(this.state.bugsList)
+        const bugItems = this.renderItems(this.state.bugsList);
+        const fishItems = this.renderItems(this.state.fishList);
 
         return (
             <div className="App">
@@ -57,6 +70,7 @@ class App extends React.Component {
                     </thead>
                     <tbody>
                         {bugItems}
+                        {fishItems}
                     </tbody>
                 </table>
             </div>

@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Special thanks to:
+
+* [Sungyeon Yoo](https://github.com/sungyeonu) for building a New Horizons wiki scraper, all JSON came from his repo: https://github.com/sungyeonu/animal-crossing-scraper
