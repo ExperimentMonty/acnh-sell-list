@@ -64,11 +64,16 @@ class App extends React.Component {
                 {/*    Learn React*/}
                 {/*  </a>*/}
                 {/*</header>*/}
-                <TableHeader bugsOnClick={() => this.toggleBugs()}
-                             fishOnClick={() => this.toggleFish()}/>
+                <TableHeader
+                    bugsIncluded={this.state.bugsIncluded}
+                    fishIncluded={this.state.fishIncluded}
+                    bugsOnClick={() => this.toggleBugs()}
+                    fishOnClick={() => this.toggleFish()}
+                />
                 <ItemTable
                     bugsList={this.state.bugsIncluded ? this.state.bugsList : []}
-                    fishList={this.state.fishIncluded ? this.state.fishList: []}/>
+                    fishList={this.state.fishIncluded ? this.state.fishList: []}
+                />
             </div>
         );
     }

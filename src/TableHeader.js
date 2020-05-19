@@ -8,10 +8,12 @@ export default class TableHeader extends React.Component {
             <>
                 <HeaderToggle
                     title="Bugs"
+                    status={this.props.bugsIncluded}
                     onClick={this.props.bugsOnClick}
                 />
                 <HeaderToggle
                     title="Fish"
+                    status={this.props.fishIncluded}
                     onClick={this.props.fishOnClick}
                 />
             </>
