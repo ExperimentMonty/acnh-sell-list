@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/acnh-sell-list/static/css/main.d1b05096.chunk.css",
+    "main.js": "/acnh-sell-list/static/js/main.cb20abad.chunk.js",
+    "main.js.map": "/acnh-sell-list/static/js/main.cb20abad.chunk.js.map",
+    "runtime-main.js": "/acnh-sell-list/static/js/runtime-main.0813ea44.js",
+    "runtime-main.js.map": "/acnh-sell-list/static/js/runtime-main.0813ea44.js.map",
+    "static/js/2.44dd3638.chunk.js": "/acnh-sell-list/static/js/2.44dd3638.chunk.js",
+    "static/js/2.44dd3638.chunk.js.map": "/acnh-sell-list/static/js/2.44dd3638.chunk.js.map",
+    "index.html": "/acnh-sell-list/index.html",
+    "precache-manifest.7892edc82b65acef8cbc3d48b5deb3eb.js": "/acnh-sell-list/precache-manifest.7892edc82b65acef8cbc3d48b5deb3eb.js",
+    "service-worker.js": "/acnh-sell-list/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/acnh-sell-list/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.44dd3638.chunk.js.LICENSE.txt": "/acnh-sell-list/static/js/2.44dd3638.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0813ea44.js",
+    "static/js/2.44dd3638.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.cb20abad.chunk.js"
+  ]
+}
