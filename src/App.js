@@ -1,6 +1,5 @@
 // import React from 'react';
-import React, { useState } from 'react';
-import ItemRow from './ItemRow';
+import React from 'react';
 import ItemTable from './ItemTable';
 import './App.css';
 
@@ -36,6 +35,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <header>
+                    <h2>Animal Crossing Prices</h2>
+                </header>
                 {/*<header className="App-header">*/}
                 {/*  <img src={logo} className="App-logo" alt="logo" />*/}
                 {/*  <p>*/}

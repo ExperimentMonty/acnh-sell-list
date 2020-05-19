@@ -2,19 +2,22 @@ import React from "react";
 import ItemRow from "./ItemRow";
 
 class ItemTable extends React.Component {
+    sortItems(...itemLists) {
+        return itemLists[0].concat(...itemLists.slice(1)).sort(((a,b) => a.price - b.price));
+    }
 
     renderItems(itemList) {
         return itemList.map((itemDetails) => {
                 // const itemDetails = item[1];
-                console.log(itemDetails)
+                // console.log(itemDetails)
                 return <ItemRow key={itemDetails.name} {...itemDetails} />;
             }
         )
     }
 
     render() {
-        const bugItems = this.renderItems(this.props.bugsList);
-        const fishItems = this.renderItems(this.props.fishList);
+        const sortedList = this.sortItems(this.props.bugsList, this.props.fishList);
+        const sortedItems = this.renderItems(sortedList);
         return (
             <table>
                 <thead>
@@ -24,8 +27,7 @@ class ItemTable extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
-                    {bugItems}
-                    {fishItems}
+                    {sortedItems}
                 </tbody>
             </table>
         );
