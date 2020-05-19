@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e3f85be72a1a4191a97d6e65729a7cb",
+    "revision": "7ef84ce8eab1775654663c50db7f1db7",
     "url": "/acnh-sell-list/index.html"
   },
   {
-    "revision": "df003c0d71089cfaef24",
+    "revision": "49132f5b757de9b4b00c",
     "url": "/acnh-sell-list/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/acnh-sell-list/static/js/2.44dd3638.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df003c0d71089cfaef24",
-    "url": "/acnh-sell-list/static/js/main.cb20abad.chunk.js"
+    "revision": "49132f5b757de9b4b00c",
+    "url": "/acnh-sell-list/static/js/main.922333dd.chunk.js"
   },
   {
     "revision": "a58543d9e30614cb284b",
