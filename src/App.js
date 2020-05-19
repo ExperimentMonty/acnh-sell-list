@@ -2,6 +2,8 @@
 import React from 'react';
 import ItemTable from './ItemTable';
 import './App.css';
+import HeaderToggle from "./HeaderToggle";
+import TableHeader from "./TableHeader";
 
 class App extends React.Component {
     constructor(props) {
@@ -27,9 +29,19 @@ class App extends React.Component {
             });
 
         this.state = {
+            bugsIncluded: true,
+            fishIncluded: true,
             bugsList: bugsList,
             fishList: fishList,
         };
+    }
+
+    toggleBugs() {
+        this.setState({bugsIncluded: !this.state.bugsIncluded})
+    }
+
+    toggleFish() {
+        this.setState({fishIncluded: !this.state.fishIncluded})
     }
 
     render() {
@@ -52,7 +64,11 @@ class App extends React.Component {
                 {/*    Learn React*/}
                 {/*  </a>*/}
                 {/*</header>*/}
-                <ItemTable bugsList={this.state.bugsList} fishList={this.state.fishList}/>
+                <TableHeader bugsOnClick={() => this.toggleBugs()}
+                             fishOnClick={() => this.toggleFish()}/>
+                <ItemTable
+                    bugsList={this.state.bugsIncluded ? this.state.bugsList : []}
+                    fishList={this.state.fishIncluded ? this.state.fishList: []}/>
             </div>
         );
     }
