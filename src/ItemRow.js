@@ -1,6 +1,6 @@
 import React from "react";
 
-class ItemRow extends React.Component {
+export default class ItemRow extends React.Component {
     render() {
         const name = this.props.name;
         const price = this.props.price
@@ -12,5 +12,3 @@ class ItemRow extends React.Component {
         );
     }
 }
-
-export default ItemRow;

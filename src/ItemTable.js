@@ -1,7 +1,7 @@
 import React from "react";
 import ItemRow from "./ItemRow";
 
-class ItemTable extends React.Component {
+export default class ItemTable extends React.Component {
     sortItems(...itemLists) {
         return itemLists[0].concat(...itemLists.slice(1)).sort(((a,b) => a.price - b.price));
     }
@@ -33,5 +33,3 @@ class ItemTable extends React.Component {
         );
     }
 }
-
-export default ItemTable;
