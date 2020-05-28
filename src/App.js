@@ -25,20 +25,35 @@ class App extends React.Component {
                 return itemDetails.seasonsNorthernHemisphere[currentMonth];
             });
 
+        // Load forage items (might split this out into shells and others at some point
+        // TODO: Make this function handle multiples? Or maybe make the multiple show up as a hover?
+        let forage = require('./forage.json');
+        const forageList = Object.entries(forage).map((rawItem) => rawItem[1]) // Gets the details as the top level object
+            .filter((itemDetails) => {
+                return itemDetails.seasonsNorthernHemisphere[currentMonth];
+            });
+
         this.state = {
             bugsIncluded: true,
             fishIncluded: true,
+            forageIncluded: true,
             bugsList: bugsList,
             fishList: fishList,
+            forageList: forageList,
         };
     }
 
+    // TODO: Refactor these toggle functions into one configurable function
     toggleBugs() {
         this.setState({bugsIncluded: !this.state.bugsIncluded})
     }
 
     toggleFish() {
         this.setState({fishIncluded: !this.state.fishIncluded})
+    }
+
+    toggleForage() {
+        this.setState({forageIncluded: !this.state.forageIncluded})
     }
 
     render() {
@@ -50,13 +65,16 @@ class App extends React.Component {
                 <TableHeader
                     bugsIncluded={this.state.bugsIncluded}
                     fishIncluded={this.state.fishIncluded}
+                    forageIncluded={this.state.forageIncluded}
                     bugsOnClick={() => this.toggleBugs()}
                     fishOnClick={() => this.toggleFish()}
+                    forageOnClick={() => this.toggleForage()}
                 />
                 <ItemTable
                     itemLists={
                         [this.state.bugsIncluded ? this.state.bugsList : [],
-                        this.state.fishIncluded ? this.state.fishList: []]
+                        this.state.fishIncluded ? this.state.fishList: [],
+                        this.state.forageIncluded ? this.state.forageList: [],]
                     }
                 />
             </div>

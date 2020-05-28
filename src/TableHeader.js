@@ -16,6 +16,11 @@ export default class TableHeader extends React.Component {
                     status={this.props.fishIncluded}
                     onClick={this.props.fishOnClick}
                 />
+                <HeaderToggle
+                    title="Forage"
+                    status={this.props.forageIncluded}
+                    onClick={this.props.forageOnClick}
+                />
             </>
         )
     }
