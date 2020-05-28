@@ -31,7 +31,23 @@ class App extends React.Component {
         const forageList = Object.entries(forage).map((rawItem) => rawItem[1]) // Gets the details as the top level object
             .filter((itemDetails) => {
                 return itemDetails.seasonsNorthernHemisphere[currentMonth];
-            });
+            })
+            .reduce((output, item) => {
+                // I'm pretty sure there's a cleaner way to show stacked items than this, but oh well,
+                // I'm learning a lot by doing it this way
+                console.log(item);
+                output.push(item)
+                for (let i = item.interval; i < item.maxStack; i = i+item.interval) {
+                    if (i === 1) {
+                        continue;
+                    }
+                    let stackedItem = {...item};
+                    stackedItem.name = stackedItem.name + " x " + i;
+                    stackedItem.price = stackedItem.price * i;
+                    output.push(stackedItem);
+                }
+                return output;
+            }, []);
 
         this.state = {
             bugsIncluded: true,
