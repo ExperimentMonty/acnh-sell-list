@@ -16,7 +16,7 @@ export default class ItemTable extends React.Component {
     }
 
     render() {
-        const sortedList = this.sortItems(this.props.bugsList, this.props.fishList);
+        const sortedList = this.sortItems(...this.props.itemLists);
         const sortedItems = this.renderItems(sortedList);
         return (
             <table>
