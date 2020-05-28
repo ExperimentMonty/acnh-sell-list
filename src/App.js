@@ -67,21 +67,8 @@ class App extends React.Component {
         }
     }
 
-    // TODO: Refactor these toggle functions into one configurable function
-    toggleBugs() {
-        this.setState({bugsIncluded: !this.state.bugsIncluded});
-    }
-
-    toggleFish() {
-        this.setState({fishIncluded: !this.state.fishIncluded});
-    }
-
-    toggleForage() {
-        this.setState({forageIncluded: !this.state.forageIncluded});
-    }
-
-    toggleShowStacks() {
-        this.setState({showStacks: !this.state.showStacks});
+    toggleState(stateVariable) {
+        return () => {this.setState({[stateVariable]: !this.state[stateVariable]})};
     }
 
     render() {
@@ -95,10 +82,10 @@ class App extends React.Component {
                     fishIncluded={this.state.fishIncluded}
                     forageIncluded={this.state.forageIncluded}
                     showStacks={this.state.showStacks}
-                    bugsOnClick={() => this.toggleBugs()}
-                    fishOnClick={() => this.toggleFish()}
-                    forageOnClick={() => this.toggleForage()}
-                    showStacksOnClick={() => this.toggleShowStacks()}
+                    bugsOnClick={this.toggleState("bugsIncluded")}
+                    fishOnClick={this.toggleState("fishIncluded")}
+                    forageOnClick={this.toggleState("forageIncluded")}
+                    showStacksOnClick={this.toggleState("showStacks")}
                 />
                 <ItemTable
                     itemLists={
