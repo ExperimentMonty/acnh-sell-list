@@ -31,13 +31,27 @@ class App extends React.Component {
         const forageList = Object.entries(forage).map((rawItem) => rawItem[1]) // Gets the details as the top level object
             .filter((itemDetails) => {
                 return itemDetails.seasonsNorthernHemisphere[currentMonth];
-            })
-            .reduce((output, item) => {
+            });
+
+        this.state = {
+            bugsIncluded: true,
+            fishIncluded: true,
+            forageIncluded: true,
+            showStacks: false,
+            bugsList: bugsList,
+            fishList: fishList,
+            forageList: forageList,
+        };
+    }
+
+    createStackedList(list) {
+        if (this.state.showStacks) {
+            return list.reduce((output, item) => {
                 // I'm pretty sure there's a cleaner way to show stacked items than this, but oh well,
                 // I'm learning a lot by doing it this way
-                console.log(item);
+                // console.log(item);
                 output.push(item)
-                for (let i = item.interval; i < item.maxStack; i = i+item.interval) {
+                for (let i = item.interval; i < item.maxStack; i = i + item.interval) {
                     if (i === 1) {
                         continue;
                     }
@@ -48,28 +62,26 @@ class App extends React.Component {
                 }
                 return output;
             }, []);
-
-        this.state = {
-            bugsIncluded: true,
-            fishIncluded: true,
-            forageIncluded: true,
-            bugsList: bugsList,
-            fishList: fishList,
-            forageList: forageList,
-        };
+        } else {
+            return list;
+        }
     }
 
     // TODO: Refactor these toggle functions into one configurable function
     toggleBugs() {
-        this.setState({bugsIncluded: !this.state.bugsIncluded})
+        this.setState({bugsIncluded: !this.state.bugsIncluded});
     }
 
     toggleFish() {
-        this.setState({fishIncluded: !this.state.fishIncluded})
+        this.setState({fishIncluded: !this.state.fishIncluded});
     }
 
     toggleForage() {
-        this.setState({forageIncluded: !this.state.forageIncluded})
+        this.setState({forageIncluded: !this.state.forageIncluded});
+    }
+
+    toggleShowStacks() {
+        this.setState({showStacks: !this.state.showStacks});
     }
 
     render() {
@@ -82,15 +94,17 @@ class App extends React.Component {
                     bugsIncluded={this.state.bugsIncluded}
                     fishIncluded={this.state.fishIncluded}
                     forageIncluded={this.state.forageIncluded}
+                    showStacks={this.state.showStacks}
                     bugsOnClick={() => this.toggleBugs()}
                     fishOnClick={() => this.toggleFish()}
                     forageOnClick={() => this.toggleForage()}
+                    showStacksOnClick={() => this.toggleShowStacks()}
                 />
                 <ItemTable
                     itemLists={
                         [this.state.bugsIncluded ? this.state.bugsList : [],
                         this.state.fishIncluded ? this.state.fishList: [],
-                        this.state.forageIncluded ? this.state.forageList: [],]
+                        this.createStackedList(this.state.forageIncluded ? this.state.forageList: []),]
                     }
                 />
             </div>

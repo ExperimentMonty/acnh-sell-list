@@ -21,6 +21,11 @@ export default class TableHeader extends React.Component {
                     status={this.props.forageIncluded}
                     onClick={this.props.forageOnClick}
                 />
+                <HeaderToggle
+                    title="Show Stacked Item Values"
+                    status={this.props.showStacks}
+                    onClick={this.props.showStacksOnClick}
+                />
             </>
         )
     }
