@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/acnh-sell-list/static/css/main.d1b05096.chunk.css",
-    "main.js": "/acnh-sell-list/static/js/main.744c1fac.chunk.js",
-    "main.js.map": "/acnh-sell-list/static/js/main.744c1fac.chunk.js.map",
+    "main.js": "/acnh-sell-list/static/js/main.b6f833d4.chunk.js",
+    "main.js.map": "/acnh-sell-list/static/js/main.b6f833d4.chunk.js.map",
     "runtime-main.js": "/acnh-sell-list/static/js/runtime-main.0813ea44.js",
     "runtime-main.js.map": "/acnh-sell-list/static/js/runtime-main.0813ea44.js.map",
-    "static/js/2.1fbbec8d.chunk.js": "/acnh-sell-list/static/js/2.1fbbec8d.chunk.js",
-    "static/js/2.1fbbec8d.chunk.js.map": "/acnh-sell-list/static/js/2.1fbbec8d.chunk.js.map",
+    "static/js/2.c109120f.chunk.js": "/acnh-sell-list/static/js/2.c109120f.chunk.js",
+    "static/js/2.c109120f.chunk.js.map": "/acnh-sell-list/static/js/2.c109120f.chunk.js.map",
     "index.html": "/acnh-sell-list/index.html",
-    "precache-manifest.91c59c5c15f22541ecaddd0afc9c0285.js": "/acnh-sell-list/precache-manifest.91c59c5c15f22541ecaddd0afc9c0285.js",
+    "precache-manifest.ff4ce2480432b80abaa376b4e37bba5c.js": "/acnh-sell-list/precache-manifest.ff4ce2480432b80abaa376b4e37bba5c.js",
     "service-worker.js": "/acnh-sell-list/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/acnh-sell-list/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.1fbbec8d.chunk.js.LICENSE.txt": "/acnh-sell-list/static/js/2.1fbbec8d.chunk.js.LICENSE.txt"
+    "static/js/2.c109120f.chunk.js.LICENSE.txt": "/acnh-sell-list/static/js/2.c109120f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0813ea44.js",
-    "static/js/2.1fbbec8d.chunk.js",
+    "static/js/2.c109120f.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.744c1fac.chunk.js"
+    "static/js/main.b6f833d4.chunk.js"
   ]
 }
